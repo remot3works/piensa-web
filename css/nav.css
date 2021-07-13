@@ -1,0 +1,204 @@
+.nav{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 8vh;
+    
+    margin-bottom: 8em;
+    padding: 5px 0px;
+}
+
+.nav2{
+    background-color: #ffffff ;
+    box-shadow: 2px 3px 40px #727272a9;
+    color: #08586B;
+}
+/* .nav2 .enlaces li a{
+   color: #08586B;
+} */
+/* .dropdown-menu{
+    background-color: #faedcf !important;
+} */
+/* .nav2 .enlaces .dropdown .dropdown-menu{
+    background-color: #ffffff !important;
+ } */
+
+.logo{
+    display: flex;
+    position: relative;
+    width: 15%;
+}
+.logo img{
+    max-width: 90px;
+    height: auto;
+    filter: brightness(100);
+}
+/* .logo:hover{
+    filter: none;
+} */
+
+.nav2 .logo img{
+    filter: none;
+}
+
+.enlaces{
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    z-index: 99;
+}
+.enlaces li{
+    list-style: none;
+    margin: 0px 7px;
+    line-height: 9px;
+}
+.enlaces li a{
+    color: #08586B;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px #FFFFFF, 0 0 16px #fff;
+}
+.enlaces li a:hover {
+    color: #D25120;
+}
+.enlaces li a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform ease 0.5s;
+    -webkit-transition: transform ease 0.5s;
+    -moz-transition: transform ease 0.5s;
+    -ms-transition: transform ease 0.5s;
+    -o-transition: transform ease 0.5s;
+}
+
+.enlaces li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px; 
+    background-color: #D25120;;
+}
+@media only screen and (max-width: 1024px) {
+   .enlaces{
+       width: 60%;
+   }
+   .enlaces li a {
+    font-size: 14px;
+    text-shadow: none;
+}
+@media only screen and (max-width: 768px) {
+    .nav{
+        justify-content: space-around;
+    }
+    .logo img{
+        max-width: 60px;
+    }
+    .enlaces{
+        position: absolute;
+        top: 8vh;
+        right: 0px;
+        height: 92vh;
+        background-color: #08586B;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        justify-content: center;
+    }
+    .enlaces li{
+        opacity: 0;
+        /* animation: navLinkFade 5s ease forwards; */
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    /* .nav2 .enlaces li a{
+        color: #FFF;
+     } */
+    .burger{
+        display: block;
+    }
+    .enlaces li a{
+        color: #ffffff;
+        font-size: 1em;
+    }
+}
+
+/* ==== Responsive ==== */
+    @media only screen and (max-width: 414px) {
+        .enlaces li a::after {
+            display: none;
+        }
+    }
+
+/* ========================= */
+.enlaces-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0.5;
+        transform: translateX(60px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Progress Bar  */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+}
+  
+.progress-bar {
+    height: 4px;
+    background: #D25120;
+    width: 0%;
+}
+  
+.content{
+    padding: 100px 0px;
+    margin: 0 auto;
+    width: 80%;
+}
